@@ -1,0 +1,323 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+:root {
+    --light: white;
+    --dark: rgb(24, 24, 24);
+    --accent: rgb(236, 236, 236);
+}
+
+body {
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 100vh;
+    background: var(--accent);
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+.bubbles {
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*font-size: xx-large; /*leaf icon*/
+}
+@keyframes animateBubbles {
+    0% {
+        opacity: 1;
+        border-radius: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    80% {
+        opacity: 0;
+        border-radius: 50%;
+        transform: translateY(-1000px) rotate(720deg);
+    }
+}
+.bubbles div {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: var(--dark);
+    bottom: -150px;
+    animation: animateBubbles 5s linear infinite;
+}
+.bubbles div:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+.bubbles div:nth-child(2) {
+    left: 5%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+.bubbles div:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+    animation-duration: 13s;
+}
+.bubbles div:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+.bubbles div:nth-child(5) {
+    left: 65%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 13s;
+}
+.bubbles div:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+    animation-duration: 9s;
+}
+.bubbles div:nth-child(7) {
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 8s;
+}
+.bubbles div:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 0s;
+    animation-duration: 7s;
+}
+.bubbles div:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 25s;
+}
+.bubbles div:nth-child(10) {
+    left: 90%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+  
+.btn {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    color: var(--clr-accent);
+    background-color: var(--light);
+    border: solid var(--dark);
+    border-radius: 10px;
+    margin: 2%;
+  
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+  
+    /* transition: all 0.3s; */
+}
+  
+.btn:hover {
+    /*transform: translateY(-10px);*/
+    /*transform: scale(1.1, 1.1);*/
+    transform: scale(1.1, 1.1);
+    color: var(--light); 
+    border-color: var(--dark);
+    background-color: var(--dark);
+}
+
+.name {
+    /*-webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;*/
+    font-size: larger;
+    color: var(--dark);
+    background: var(--light);
+    padding: 30px;
+    position: relative;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    background: var(--light);
+    height: 2em;
+    color: var(--dark);
+    padding: 20px 50px;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -2%;
+}
+header .menuH {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+header .menuH li {
+    list-style: none;
+}
+header .menuH li a {
+    font-size: 2em;
+    color:var(--dark);
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.2s;
+}
+header .menuH li a {
+    font-size: 1.2em;
+    color:var(--dark);
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+header .menuH li a:hover {
+    opacity: 1;
+    transform: scale(1.1, 1.1);
+}
+
+.about {
+    margin: 2%;
+    padding: 200px;
+    color: var(--dark);
+}
+
+/*
+h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    word-spacing: 1.4px;
+    color: var(--clr-dark);
+    background-image: url(https://i.postimg.cc/x19RPgpB/profile.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+*/
+
+footer {
+    position: relative;
+    width: 100%;
+    background: var(--dark);
+    min-height: 100px;
+    color: var(--light);
+    padding: 20px 50px;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+}
+footer .icon,
+footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+footer .icon li,
+footer .menu li {
+    list-style: none;
+}
+footer .icon li a,
+footer .menu li a {
+    font-size: 2em;
+    color: var(--light);
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.2s;
+}
+footer .icon li a:hover {
+    transform: translateY(-10px);
+}
+footer .menu li a {
+    font-size: 1.2em;
+    color: var(--light);
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+footer .menu li a:hover {
+    opacity: 1;
+    transform: scale(1.1, 1.1);
+}
+footer p {
+    color: var(--light);
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    opacity: 0.50;
+}
+
+/*
+footer .waves {
+    position: absolute;
+    top: -100px;
+    Left: 0;
+    width: 100%;
+    height: 100px;
+    background: red url(wave.png);
+    background-size: 1000px 100px;
+}
+footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    -webkit-animation-name: animateWave;
+    animation-name: animateWave;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-iteration-count: linear infinite;
+    animation-iteration-count: linear infinite;
+}
+@keyframes animateWave {
+    0% {
+        -webkit-background-position-x: 1000px;
+        background-position-x: 1000px;
+    }
+    100% {
+        -webkit-background-position-x: 0px;
+        background-position-x: 0px;
+    }
+}
+*/
